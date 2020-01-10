@@ -1,6 +1,6 @@
 Name: libformula
 Version: 1.1.3
-Release: 10%{?dist}
+Release: 8%{?dist}
 Summary: Formula Parser
 License: LGPLv2
 Group: System Environment/Libraries
@@ -9,7 +9,7 @@ Group: System Environment/Libraries
 #to simplify the licensing
 Source: %{name}-%{version}-jarsdeleted.zip
 URL: http://reporting.pentaho.org/
-BuildRequires: ant, ant-contrib, java-devel, jpackage-utils, libbase >= 1.1.3
+BuildRequires: ant, ant-contrib, ant-nodeps, java-devel, jpackage-utils, libbase >= 1.1.3
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: java, jpackage-utils, apache-commons-logging, libbase >= 1.1.3
 BuildArch: noarch
@@ -67,12 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadocdir}/%{name}
 
 %changelog
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.3-10
-- Mass rebuild 2013-12-27
-
-* Fri Dec 06 2013 Caolán McNamara <caolanm@redhat.com> - 1.1.3-9
-- Resolves: rhbz#1038178 ant-nodeps dropped
-
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.3-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
